@@ -1,6 +1,7 @@
 
 function createSudoku(level) {
     var table = document.getElementById('board');
+    var remind = document.getElementById('remind');
     table.innerHTML = '';
     var lastValue;
     var lastGrid;
@@ -77,7 +78,7 @@ function createSudoku(level) {
                     this.style.backgroundColor = '#b7c9c3';
 
                     var self = this;
-                    var ansSelector = document.getElementById('selector-area');   //a new table inside a table grid
+                    var ansSelector = document.getElementById('selector-area');
                     ansSelector.innerHTML = '';
                     var validNum = getValidNum(9 * this.i + this.j);
                     for (var k = 0; k < 9; k++)
@@ -114,9 +115,8 @@ function createSudoku(level) {
                                     cuCell.state++;
                                     board[9 * cuCell.i + cuCell.j] = value;
                                     ansSelector.innerHTML = '';
-                                    // logic.fill(cuCell.j, cuCell.i, value);
-                                    if (logic.checkComplete()) {
-                                        remind.innerHTML = '<h1 class="text-setted">Succeed!</h1>'
+                                    if (board.indexOf(0) < 0) {
+                                        remind.innerHTML = '<h1>Succeed!</h1>'
                                     }
                                 }
                             })();

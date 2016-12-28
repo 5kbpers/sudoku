@@ -22,9 +22,5 @@
 
 #remind{
     color: red;
-}
-
-@keyframes myfirst{
-    from {margin-top: 65px;}
-    to {background: 100px;}
+    font-size: 35px;
 }
