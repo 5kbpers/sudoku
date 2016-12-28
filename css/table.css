@@ -1,0 +1,30 @@
+.board {
+    margin-top: 100px;
+    width: 405px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 8px solid black;
+}
+.board tr{
+    width: 53px;
+    height: 53px;
+}
+
+.board td{
+    font-size: 30px;
+    width: 53px;
+    height: 53px;
+    border: 3px solid black;
+    text-align: center;
+    border-radius: 0;
+    background-color: #C1D87E;
+}
+
+#remind{
+    color: red;
+}
+
+@keyframes myfirst{
+    from {margin-top: 65px;}
+    to {background: 100px;}
+}

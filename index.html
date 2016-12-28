@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <title>Sudoku</title>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8"/>
+    <link rel="stylesheet" href="css/table.css"/>
+    <link rel="stylesheet" href="css/select.css"/>
+    <style>
+        body {margin:0;}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            font-size: 20px;
+            width: 80px;
+            line-height: 40px;
+            display: block;
+            height: 40px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        .active {
+            background-color: #67a531;
+        }
+    </style>
+</head>
+<body>
+<ul style="top:0; left:0; right:0; position: fixed;" id="menu">
+    <li><a href="javascript:createSudoku(0)" >Easy</a></li>
+    <li><a href="javascript:createSudoku(1)" class="active" id="firstItem">Medium</a></li>
+    <li><a href="javascript:createSudoku(2)">Hard</a></li>
+</ul>
+
+<div class=""> </div>
+
+<table id="board" class="board" align="center">
+</table>
+
+<div id="selector-area">
+</div>
+
+<script src="js/sudoku.js"></script>
+<script src="js/render.js"></script>
+<script type="text/javascript">
+    var lastElem = document.getElementById('firstItem');
+    var menu = document.getElementById('menu');
+    var lis = menu.getElementsByTagName("li");
+    for(var i in lis){
+        lis[i].onclick = function(){
+            lastElem.className = '';
+            this.className = 'active';
+            lastElem = this;
+        }
+    }
+    createSudoku(1);
+</script>
+</body>
+</html>
